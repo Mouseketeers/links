@@ -20,7 +20,8 @@ class Links extends DataObjectDecorator {
 	public function getLinks() {
 		$links = DataObject::get(
 			$class_name = 'Page',
-			$where = 'ShowAsLink = 1'
+			$where = 'ShowAsLink = 1',
+			$sort = 'Sort'
 		);
 		return $links;
 	}
