@@ -1,5 +1,5 @@
-<ul class="inline-list">
-<% control Links %>
+<ul class="links inline-list">
+<% loop Links %>
 	<li id="link-{$ID}" class="$LinkingMode"><a class="$LinkingMode" href="$URLSegment">$MenuTitle</a></li>
-<% end_control %>
+<% end_loop %>
 </ul>

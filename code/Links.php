@@ -1,16 +1,13 @@
 <?php 
-class Links extends DataObjectDecorator {	
-	public static $label = 'Show as link';
-	function extraStatics() {
-		return array(
-			'db' => array(
-				'ShowAsLink' => 'Boolean'
-			)
-		);
-	}
-	function updateCMSFields(&$fields){
-		$fields->addFieldToTab('Root.Behaviour',
-			new CheckboxField('ShowAsLink',self::$label), 'ShowInSearch'
+class Links extends DataExtension {	
+	private static $label = 'Show as link';
+	private static $db = array(
+		'ShowAsLink' => 'Boolean'
+	);
+	public function UpdateSettingsFields($fields) {
+		$fields->addFieldToTab('Root.Settings',
+			new CheckboxField('ShowAsLink',self::$label),
+			'ShowInSearch'
 		);
 		return $fields;
 	}
